@@ -1,12 +1,12 @@
 {
     "name": "OpenMageModuleFostering/ebay2magento",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "Open-Software-License",
     "homepage": "",
-    "description": "This is ebay to magento item import extension ",
+    "description": "This is ebay to magento item import extension",
     "authors": [
     {
-        "name": "iquallinfo",
+        "name": "Iquall",
         "email": "support@i-quall.com"
     }
 ],

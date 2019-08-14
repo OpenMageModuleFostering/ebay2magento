@@ -100,6 +100,7 @@ class ebay {
       foreach ($picture_url as $p){
           $p_url[$z]=$p->nodeValue;
           $z++;
+          break;
       }
      
       if(empty($p_url)){

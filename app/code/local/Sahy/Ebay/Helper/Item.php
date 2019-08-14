@@ -19,8 +19,8 @@ class sahy_ebay_Helper_Item extends Mage_Core_Helper_Abstract
                 <value>true</value>
                 </itemFilter>
                 <paginationInput>
-                <pageNumber>'.$page.'</pageNumber>
-                <entriesPerPage>1000</entriesPerPage>
+                <pageNumber>1</pageNumber>
+                <entriesPerPage>10</entriesPerPage>
                 </paginationInput>
                 <outputSelector>PictureURLSuperSize</outputSelector>
                 <outputSelector>PictureURLLarge</outputSelector>

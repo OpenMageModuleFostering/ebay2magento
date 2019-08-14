@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/ebay2magento",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "This is ebay to magento item import extension",
+    "authors": [
+    {
+        "name": "iquallinfoway",
+        "email": "support@i-quall.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

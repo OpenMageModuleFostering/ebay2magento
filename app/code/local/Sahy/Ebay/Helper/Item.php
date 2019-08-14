@@ -19,8 +19,8 @@ class sahy_ebay_Helper_Item extends Mage_Core_Helper_Abstract
                 <value>true</value>
                 </itemFilter>
                 <paginationInput>
-                <pageNumber>42</pageNumber>
-                <entriesPerPage>60</entriesPerPage>
+                <pageNumber>'.$page.'</pageNumber>
+                <entriesPerPage>1000</entriesPerPage>
                 </paginationInput>
                 <outputSelector>PictureURLSuperSize</outputSelector>
                 <outputSelector>PictureURLLarge</outputSelector>
@@ -31,38 +31,38 @@ class sahy_ebay_Helper_Item extends Mage_Core_Helper_Abstract
 
     public function additem($id,$price,$name,$desc,$sku,$path,$qty,$category_id,$name_value,$days,$item_url,$total,$options,$option_label){
                     $pro  = Mage::getModel('catalog/product');
-//                    
-//                    foreach($name_value as $nv){
-//                        $pro->setData($nv[0],$nv[1]);
-//                    }
-               //     echo 'add item called';
+
+                    foreach($name_value as $nv){
+                        $pro->setData($nv[0],$nv[1]);
+                    }
+              //     echo 'add item called';
                     
-//                     /*--------------variation start-------------*/
-//                    $i=0;
-//                    foreach($options as $op){
-//                    $option_list_[$i] = array(
-//                    'title' => $option_label_[$i],
-//                    'type' => 'drop_down', // could be drop_down ,checkbox , multiple
-//                    'is_require' => 1,
-//                    'sort_order' => 0,
-//                    'values' => $this->getOptions($op)
-//                    );
-//                    $i++;
-//                    }
-//                    $pro->setProductOptions($option_list_);
-//                    $pro->setCanSaveCustomOptions(true);
+                     /*--------------variation start-------------*/
+                    $i=0;
+                    foreach($options as $op){
+                    $option_list_[$i] = array(
+                    'title' => $option_label_[$i],
+                    'type' => 'drop_down', // could be drop_down ,checkbox , multiple
+                    'is_require' => 1,
+                    'sort_order' => 0,
+                    'values' => $this->getOptions($op)
+                    );
+                    $i++;
+                    }
+                    $pro->setProductOptions($option_list_);
+                    $pro->setCanSaveCustomOptions(true);
                       /*--------------variation end-------------*/
                     
                     
-//                    $count=0;
-//                    foreach ($path as $p) :
-//                        if ($count == 0) :
-//                            $pro->addImageToMediaGallery($p, array('thumbnail','image','small_image'), false); 
-//                        else :
-//                             $pro->addImageToMediaGallery($p,null, false, false );
-//                        endif;
-//                            $count++;  
-//                    endforeach; 
+                    $count=0;
+                   foreach ($path as $p) :
+                       if ($count == 0) :
+                            $pro->addImageToMediaGallery($p, array('thumbnail','image','small_image'), false); 
+                        else :
+                             $pro->addImageToMediaGallery($p,null, false, false );
+                        endif;
+                            $count++;  
+                    endforeach; 
                      
                     $pro->setType('Simple Product');
                     $pro->setWebsiteIds(array(1));

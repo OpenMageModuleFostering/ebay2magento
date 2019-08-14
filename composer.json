@@ -3,10 +3,10 @@
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
-    "description": "This is ebay to magento item import extension",
+    "description": "This is ebay to magento item import extension ",
     "authors": [
     {
-        "name": "iquallinfoway",
+        "name": "iquallinfo",
         "email": "support@i-quall.com"
     }
 ],

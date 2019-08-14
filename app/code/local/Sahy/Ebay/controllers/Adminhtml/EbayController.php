@@ -37,7 +37,7 @@ class Sahy_Ebay_Adminhtml_EbayController extends Mage_Adminhtml_Controller_actio
             }
             else{
             
-            $requestXmlBody=$helper->getRequestXml($sellerId,$page);
+            $requestXmlBody=$helper->getRequestXml($sellerId,1);
          
             $headers = $helper->EbayHeaders('findItemsAdvanced');  
           
@@ -64,22 +64,22 @@ class Sahy_Ebay_Adminhtml_EbayController extends Mage_Adminhtml_Controller_actio
                     $total+=$import['total'];
                     $upadated+=$import['updated'];
                     Mage::register('pages',$pages);
-//                    for ($x=2; $x<=$pages; $x++)
-//                    {
-//                         $requestXmlBody=$helper->getRequestXml($sellerId,$x);
-//                         $response = $helper->sendHttpRequest($requestXmlBody,$headers);
-//                         $responseDoc = simplexml_load_string($response);
-//                         $data_arr = $helper->objectsIntoArray($responseDoc);
-//                         if (isset($data_arr['searchResult']['item'][0])){
-//                             $item = $data_arr['searchResult']['item'];
-//                         }
-//                         else {
-//                             $item = array($data_arr['searchResult']['item']);
-//                         }
-//                         $import = $helper->import_items($item,$category);
-//                         $total+=$import['total'];
-//                         $upadated+=$import['updated'];
-//                    } 
+                    for ($x=2; $x<=$pages; $x++)
+                    {
+                         $requestXmlBody=$helper->getRequestXml($sellerId,$x);
+                         $response = $helper->sendHttpRequest($requestXmlBody,$headers);
+                         $responseDoc = simplexml_load_string($response);
+                         $data_arr = $helper->objectsIntoArray($responseDoc);
+                         if (isset($data_arr['searchResult']['item'][0])){
+                             $item = $data_arr['searchResult']['item'];
+                         }
+                         else {
+                             $item = array($data_arr['searchResult']['item']);
+                         }
+                         $import = $helper->import_items($item,$category);
+                         $total+=$import['total'];
+                         $upadated+=$import['updated'];
+                    } 
                     $page=$page+1;
                     Mage::register('page', $page);
                     Mage::register('total', $total);
